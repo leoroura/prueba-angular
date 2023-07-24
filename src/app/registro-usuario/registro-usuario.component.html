@@ -1,0 +1,32 @@
+<!-- registro-usuario.component.html -->
+
+<h2>Registro de Nuevo Usuario</h2>
+
+<form (ngSubmit)="guardarUsuario()" #registroForm="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput name="nombre" [(ngModel)]="nuevoUsuario.nombre" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput name="apellido" [(ngModel)]="nuevoUsuario.apellido" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>DNI</mat-label>
+    <input matInput name="dni" [(ngModel)]="nuevoUsuario.dni" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Mail</mat-label>
+    <input matInput type="email" name="mail" [(ngModel)]="nuevoUsuario.mail" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput name="telefono" [(ngModel)]="nuevoUsuario.telefono" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="registroForm.invalid">Guardar</button>
+</form>
